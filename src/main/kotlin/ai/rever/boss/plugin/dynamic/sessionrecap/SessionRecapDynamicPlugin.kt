@@ -14,9 +14,6 @@ import ai.rever.boss.plugin.api.PluginContext
  *
  * It is intentionally a "mixed" type plugin - panel and tools - because the
  * recap is useful to a human reading BOSS and to an agent debugging itself.
- *
- * No reference to AI, automation, or to any of this plugin's authors'
- * tooling appears anywhere in the source.
  */
 class SessionRecapDynamicPlugin : DynamicPlugin {
 
