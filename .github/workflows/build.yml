@@ -1,0 +1,20 @@
+name: Release
+
+# contents: write so the reusable plugin-release workflow can create a GitHub
+# release and publish to the store. The reusable workflow inherits this
+# permission, and the alternative is an opaque 403 on the release step.
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    uses: risa-labs-inc/BossConsole-Releases/.github/workflows/plugin-release.yml@main
+    with:
+      boss_plugin_api_version: 'latest'
+    secrets:
+      BOSS_STORE_PLUGIN_PUBLISH_KEY: ${{ secrets.BOSS_STORE_PLUGIN_PUBLISH_KEY }}
